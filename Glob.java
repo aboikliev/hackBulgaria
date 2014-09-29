@@ -47,7 +47,7 @@ public class Glob {
 			}
 			case '}': {
 				--brackets;
-				result += '(';
+				result += ')';
 				break;
 			}
 			case ',':

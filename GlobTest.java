@@ -64,4 +64,14 @@ public class GlobTest {
 		assertTrue(glob5.matches("/home/test2/list/index.html"));
 		assertTrue(glob5.matches("/home/georgi/testme/test1/list/index.html"));
 	}
+
+	@Test
+	public void testWithBrackets() {
+		log.log(Level.INFO, "testWithBrackets");
+		Glob glob = Glob.compile("/home/index{1,2,3}.html");
+		assertTrue(glob.matches("/home/index1.html"));
+		assertFalse(glob.matches("/home/index.html"));
+		assertFalse(glob.matches("/home/index4.html"));
+	}
+
 }
